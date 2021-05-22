@@ -43,7 +43,7 @@ def admin_home(request):
 
 def add_staff(request):
     form = StaffForm(request.POST or None, request.FILES or None)
-    context = {'form': form, 'page_title': 'Add Staff'}
+    context = {'form': form, 'page_title': 'Add Teacher'}
     if request.method == 'POST':
         if form.is_valid():
             first_name = form.cleaned_data.get('first_name')
@@ -162,7 +162,7 @@ def manage_staff(request):
     allStaff = CustomUser.objects.filter(user_type=2)
     context = {
         'allStaff': allStaff,
-        'page_title': 'Manage Staff'
+        'page_title': 'Manage Teacher'
     }
     return render(request, "hod_template/manage_staff.html", context)
 
@@ -200,7 +200,7 @@ def edit_staff(request, staff_id):
     context = {
         'form': form,
         'staff_id': staff_id,
-        'page_title': 'Edit Staff'
+        'page_title': 'Edit Teacher'
     }
     if request.method == 'POST':
         if form.is_valid():
@@ -449,7 +449,7 @@ def view_staff_leave(request):
         allLeave = LeaveReportStaff.objects.all()
         context = {
             'allLeave': allLeave,
-            'page_title': 'Leave Applications From Staff'
+            'page_title': 'Leave Applications From Teacher'
         }
         return render(request, "hod_template/staff_leave_view.html", context)
     else:
@@ -566,7 +566,7 @@ def admin_view_profile(request):
 def admin_notify_staff(request):
     staff = CustomUser.objects.filter(user_type=2)
     context = {
-        'page_title': "Send Notifications To Staff",
+        'page_title': "Send Notifications To Teacher",
         'allStaff': staff
     }
     return render(request, "hod_template/staff_notification.html", context)
