@@ -14,38 +14,35 @@
                         <h3 class="card-title">{{page_title}}</h3>
                     </div>
 
-                    {% include "hod_template/form_template.html" with messages=messages  form=form button_text="Apply For Leave"%}
+                    {% include "admin_template/form_template.html" with messages=messages  form=form button_text="Submit Feedback"%}
                 </div>
                 <!-- /.card -->
 <div class="card card-primary">
     <div class="card-header"><h3 class="card-title">{{page_title}}</h3>
-   <div class="table">
+    </div>
+   <div class="table p-2">
 
        <table class="table table-bordered">
            <tr>
                <th>ID</th>
-               <th>Date</th>
-               <th>Message</th>
-            <th>Status</th>
+               <th>Feedback</th>
+               <th>Reply</th>
+            <th>Created At</th>
         </tr>
-        {% for leave in leave_history %}
+        {% for feedback in feedbacks %}
         <tr>
             <td>{{forloop.counter}}</td>
-            <td>{{leave.date}}</td>
-              <td>{{leave.message}}</td>
+            <td>{{feedback.feedback}}</td>
               <td>
                   
-                  {% if leave.status == 0 %}
-                  <span class="badge badge-warning">Pending</span>
-                  {% elif leave.status == 1 %}
-                  <span class="badge badge-success">Accepted</span>
-                  
-                    {% else %}
-                    <span class="badge badge-danger">Rejected</span>
-                    
-                    {% endif %}
-                    
-                </td>
+                  {% if feedback.reply == "" %}
+                      <p class="badge badge-warning">No Response Yet</p>
+                      {% else %}
+                      {{feedback.reply}}
+                  {% endif %}
+                      
+              </td>
+              <td>{{feedback.created_at}}</td>
             </tr>
             {% endfor %}
         </table>

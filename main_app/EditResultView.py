@@ -15,7 +15,7 @@ class EditResultView(View):
             'form': resultForm,
             'page_title': "Edit Student's Result"
         }
-        return render(request, "staff_template/edit_student_result.html", context)
+        return render(request, "teacher_template/edit_student_result.html", context)
 
     def post(self, request, *args, **kwargs):
         form = EditResultForm(request.POST)
@@ -37,4 +37,4 @@ class EditResultView(View):
                 messages.warning(request, "Result Could Not Be Updated")
         else:
             messages.warning(request, "Result Could Not Be Updated")
-        return render(request, "staff_template/edit_student_result.html", context)
+        return render(request, "teacher_template/edit_student_result.html", context)

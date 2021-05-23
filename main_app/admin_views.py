@@ -38,7 +38,7 @@ def admin_home(request):
         'attendance_list': attendance_list
 
     }
-    return render(request, 'hod_template/home_content.html', context)
+    return render(request, 'admin_template/home_content.html', context)
 
 
 def add_staff(request):
@@ -72,7 +72,7 @@ def add_staff(request):
         else:
             messages.error(request, "Please fulfil all requirements")
 
-    return render(request, 'hod_template/add_staff_template.html', context)
+    return render(request, 'admin_template/add_teacher_template.html', context)
 
 
 def add_student(request):
@@ -105,7 +105,7 @@ def add_student(request):
                 messages.error(request, "Could Not Add: " + str(e))
         else:
             messages.error(request, "Could Not Add: ")
-    return render(request, 'hod_template/add_student_template.html', context)
+    return render(request, 'admin_template/add_student_template.html', context)
 
 
 def add_course(request):
@@ -127,7 +127,7 @@ def add_course(request):
                 messages.error(request, "Could Not Add")
         else:
             messages.error(request, "Could Not Add")
-    return render(request, 'hod_template/add_course_template.html', context)
+    return render(request, 'admin_template/add_course_template.html', context)
 
 
 def add_subject(request):
@@ -155,7 +155,7 @@ def add_subject(request):
         else:
             messages.error(request, "Fill Form Properly")
 
-    return render(request, 'hod_template/add_subject_template.html', context)
+    return render(request, 'admin_template/add_subject_template.html', context)
 
 
 def manage_staff(request):
@@ -164,7 +164,7 @@ def manage_staff(request):
         'allStaff': allStaff,
         'page_title': 'Manage Teacher'
     }
-    return render(request, "hod_template/manage_staff.html", context)
+    return render(request, "admin_template/manage_staff.html", context)
 
 
 def manage_student(request):
@@ -173,7 +173,7 @@ def manage_student(request):
         'students': students,
         'page_title': 'Manage Students'
     }
-    return render(request, "hod_template/manage_student.html", context)
+    return render(request, "admin_template/manage_student.html", context)
 
 
 def manage_course(request):
@@ -182,7 +182,7 @@ def manage_course(request):
         'courses': courses,
         'page_title': 'Manage Courses'
     }
-    return render(request, "hod_template/manage_course.html", context)
+    return render(request, "admin_template/manage_course.html", context)
 
 
 def manage_subject(request):
@@ -191,7 +191,7 @@ def manage_subject(request):
         'subjects': subjects,
         'page_title': 'Manage Subjects'
     }
-    return render(request, "hod_template/manage_subject.html", context)
+    return render(request, "admin_template/manage_subject.html", context)
 
 
 def edit_staff(request, staff_id):
@@ -240,7 +240,7 @@ def edit_staff(request, staff_id):
     else:
         user = CustomUser.objects.get(id=staff_id)
         staff = Staff.objects.get(id=user.id)
-        return render(request, "hod_template/edit_staff_template.html", context)
+        return render(request, "admin_template/edit_staff_template.html", context)
 
 
 def edit_student(request, student_id):
@@ -289,7 +289,7 @@ def edit_student(request, student_id):
         else:
             messages.error(request, "Please Fill Form Properly!")
     else:
-        return render(request, "hod_template/edit_student_template.html", context)
+        return render(request, "admin_template/edit_student_template.html", context)
 
 
 def edit_course(request, course_id):
@@ -313,7 +313,7 @@ def edit_course(request, course_id):
         else:
             messages.error(request, "Could Not Update")
 
-    return render(request, 'hod_template/edit_course_template.html', context)
+    return render(request, 'admin_template/edit_course_template.html', context)
 
 
 def edit_subject(request, subject_id):
@@ -341,7 +341,7 @@ def edit_subject(request, subject_id):
                 messages.error(request, "Could Not Add " + str(e))
         else:
             messages.error(request, "Fill Form Properly")
-    return render(request, 'hod_template/edit_subject_template.html', context)
+    return render(request, 'admin_template/edit_subject_template.html', context)
 
 
 def add_session(request):
@@ -357,13 +357,13 @@ def add_session(request):
                 messages.error(request, 'Could Not Add ' + str(e))
         else:
             messages.error(request, 'Fill Form Properly ')
-    return render(request, "hod_template/add_session_template.html", context)
+    return render(request, "admin_template/add_session_template.html", context)
 
 
 def manage_session(request):
     sessions = Session.objects.all()
     context = {'sessions': sessions, 'page_title': 'Manage Sessions'}
-    return render(request, "hod_template/manage_session.html", context)
+    return render(request, "admin_template/manage_session.html", context)
 
 
 def edit_session(request, session_id):
@@ -380,13 +380,13 @@ def edit_session(request, session_id):
             except Exception as e:
                 messages.error(
                     request, "Session Could Not Be Updated " + str(e))
-                return render(request, "hod_template/edit_session_template.html", context)
+                return render(request, "admin_template/edit_session_template.html", context)
         else:
             messages.error(request, "Invalid Form Submitted ")
-            return render(request, "hod_template/edit_session_template.html", context)
+            return render(request, "admin_template/edit_session_template.html", context)
 
     else:
-        return render(request, "hod_template/edit_session_template.html", context)
+        return render(request, "admin_template/edit_session_template.html", context)
 
 
 @csrf_exempt
@@ -409,7 +409,7 @@ def student_feedback_message(request):
             'feedbacks': feedbacks,
             'page_title': 'Student Feedback Messages'
         }
-        return render(request, 'hod_template/student_feedback_template.html', context)
+        return render(request, 'admin_template/student_feedback_template.html', context)
     else:
         feedback_id = request.POST.get('id')
         try:
@@ -430,7 +430,7 @@ def staff_feedback_message(request):
             'feedbacks': feedbacks,
             'page_title': 'Staff Feedback Messages'
         }
-        return render(request, 'hod_template/staff_feedback_template.html', context)
+        return render(request, 'admin_template/staff_feedback_template.html', context)
     else:
         feedback_id = request.POST.get('id')
         try:
@@ -451,7 +451,7 @@ def view_staff_leave(request):
             'allLeave': allLeave,
             'page_title': 'Leave Applications From Teacher'
         }
-        return render(request, "hod_template/staff_leave_view.html", context)
+        return render(request, "admin_template/staff_leave_view.html", context)
     else:
         id = request.POST.get('id')
         status = request.POST.get('status')
@@ -476,7 +476,7 @@ def view_student_leave(request):
             'allLeave': allLeave,
             'page_title': 'Leave Applications From Students'
         }
-        return render(request, "hod_template/student_leave_view.html", context)
+        return render(request, "admin_template/student_leave_view.html", context)
     else:
         id = request.POST.get('id')
         status = request.POST.get('status')
@@ -502,7 +502,7 @@ def admin_view_attendance(request):
         'page_title': 'View Attendance'
     }
 
-    return render(request, "hod_template/admin_view_attendance.html", context)
+    return render(request, "admin_template/admin_view_attendance.html", context)
 
 
 @csrf_exempt
@@ -560,7 +560,7 @@ def admin_view_profile(request):
                 messages.error(request, "Invalid Data Provided")
         except Exception as e:
             messages.error(request, "Error Occured While Updating Profile " + str(e))
-    return render(request, "hod_template/admin_view_profile.html", context)
+    return render(request, "admin_template/admin_view_profile.html", context)
 
 
 def admin_notify_staff(request):
@@ -569,7 +569,7 @@ def admin_notify_staff(request):
         'page_title': "Send Notifications To Teacher",
         'allStaff': staff
     }
-    return render(request, "hod_template/staff_notification.html", context)
+    return render(request, "admin_template/staff_notification.html", context)
 
 
 def admin_notify_student(request):
@@ -578,7 +578,7 @@ def admin_notify_student(request):
         'page_title': "Send Notifications To Students",
         'students': student
     }
-    return render(request, "hod_template/student_notification.html", context)
+    return render(request, "admin_template/student_notification.html", context)
 
 
 @csrf_exempt

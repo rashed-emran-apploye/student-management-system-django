@@ -34,7 +34,7 @@ def staff_home(request):
         'subject_list': subject_list,
         'attendance_list': attendance_list
     }
-    return render(request, 'staff_template/home_content.html', context)
+    return render(request, 'teacher_template/home_content.html', context)
 
 
 def staff_take_attendance(request):
@@ -47,7 +47,7 @@ def staff_take_attendance(request):
         'page_title': 'Take Attendance'
     }
 
-    return render(request, 'staff_template/staff_take_attendance.html', context)
+    return render(request, 'teacher_template/staff_take_attendance.html', context)
 
 
 @csrf_exempt
@@ -104,7 +104,7 @@ def staff_update_attendance(request):
         'page_title': 'Update Attendance'
     }
 
-    return render(request, 'staff_template/staff_update_attendance.html', context)
+    return render(request, 'teacher_template/staff_update_attendance.html', context)
 
 
 @csrf_exempt
@@ -165,7 +165,7 @@ def staff_apply_leave(request):
                 messages.error(request, "Could not apply!")
         else:
             messages.error(request, "Form has errors!")
-    return render(request, "staff_template/staff_apply_leave.html", context)
+    return render(request, "teacher_template/staff_apply_leave.html", context)
 
 
 def staff_feedback(request):
@@ -188,7 +188,7 @@ def staff_feedback(request):
                 messages.error(request, "Could not Submit!")
         else:
             messages.error(request, "Form has errors!")
-    return render(request, "staff_template/staff_feedback.html", context)
+    return render(request, "teacher_template/staff_feedback.html", context)
 
 
 def staff_view_profile(request):
@@ -222,13 +222,13 @@ def staff_view_profile(request):
                 return redirect(reverse('staff_view_profile'))
             else:
                 messages.error(request, "Invalid Data Provided")
-                return render(request, "staff_template/staff_view_profile.html", context)
+                return render(request, "teacher_template/staff_view_profile.html", context)
         except Exception as e:
             messages.error(
                 request, "Error Occured While Updating Profile " + str(e))
-            return render(request, "staff_template/staff_view_profile.html", context)
+            return render(request, "teacher_template/staff_view_profile.html", context)
 
-    return render(request, "staff_template/staff_view_profile.html", context)
+    return render(request, "teacher_template/staff_view_profile.html", context)
 
 
 @csrf_exempt
@@ -250,7 +250,7 @@ def staff_view_notification(request):
         'notifications': notifications,
         'page_title': "View Notifications"
     }
-    return render(request, "staff_template/staff_view_notification.html", context)
+    return render(request, "teacher_template/staff_view_notification.html", context)
 
 
 def staff_add_result(request):
@@ -283,7 +283,7 @@ def staff_add_result(request):
                 messages.success(request, "Scores Saved")
         except Exception as e:
             messages.warning(request, "Error Occured While Processing Form")
-    return render(request, "staff_template/staff_add_result.html", context)
+    return render(request, "teacher_template/staff_add_result.html", context)
 
 
 @csrf_exempt
