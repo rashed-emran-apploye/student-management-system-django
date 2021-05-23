@@ -28,7 +28,7 @@
                     <div class="inner">
                         <h3>{{total_staff}}</h3>
 
-                        <p>Total Staff</p>
+                        <p>Total Teachers</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -120,7 +120,7 @@
   <script>
       $(document).ready(function(){
         var donutData        = {
-            labels: ['Students', 'Staff'],
+            labels: ['Students', 'Teachers'],
             datasets: [
               {
                 data:[{{total_students}}, {{total_staff}}],
