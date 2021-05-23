@@ -148,7 +148,7 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 AUTH_USER_MODEL = 'student_management.CustomUser'
-AUTHENTICATION_BACKENDS = ['student_management.EmailBackend.EmailBackend']
+AUTHENTICATION_BACKENDS = ['student_management.emailBackend.EmailBackend']
 TIME_ZONE = 'Africa/Lagos'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
