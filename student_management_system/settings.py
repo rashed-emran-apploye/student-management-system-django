@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My Apps
-    'main_app.apps.MainAppConfig'
+    'student_management.apps.MainAppConfig'
 ]
 
 MIDDLEWARE = [
@@ -60,7 +60,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 
     # My Middleware
-    'main_app.middleware.LoginCheckMiddleWare',
+    'student_management.middleware.LoginCheckMiddleWare',
 ]
 
 ROOT_URLCONF = 'student_management_system.urls'
@@ -68,7 +68,7 @@ ROOT_URLCONF = 'student_management_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['main_app/templates'], #My App Templates
+        'DIRS': ['student_management/templates'], #My App Templates
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -147,8 +147,8 @@ MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-AUTH_USER_MODEL = 'main_app.CustomUser'
-AUTHENTICATION_BACKENDS = ['main_app.EmailBackend.EmailBackend']
+AUTH_USER_MODEL = 'student_management.CustomUser'
+AUTHENTICATION_BACKENDS = ['student_management.EmailBackend.EmailBackend']
 TIME_ZONE = 'Africa/Lagos'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
