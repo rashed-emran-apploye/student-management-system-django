@@ -164,7 +164,7 @@ def manage_staff(request):
         'allStaff': allStaff,
         'page_title': 'Manage Teacher'
     }
-    return render(request, "admin_template/manage_staff.html", context)
+    return render(request, "admin_template/manage_teacher.html", context)
 
 
 def manage_student(request):
@@ -240,7 +240,7 @@ def edit_staff(request, staff_id):
     else:
         user = CustomUser.objects.get(id=staff_id)
         staff = Staff.objects.get(id=user.id)
-        return render(request, "admin_template/edit_staff_template.html", context)
+        return render(request, "admin_template/edit_teacher_template.html", context)
 
 
 def edit_student(request, student_id):
@@ -430,7 +430,7 @@ def staff_feedback_message(request):
             'feedbacks': feedbacks,
             'page_title': 'Staff Feedback Messages'
         }
-        return render(request, 'admin_template/staff_feedback_template.html', context)
+        return render(request, 'admin_template/teacher_feedback_template.html', context)
     else:
         feedback_id = request.POST.get('id')
         try:
@@ -451,7 +451,7 @@ def view_staff_leave(request):
             'allLeave': allLeave,
             'page_title': 'Leave Applications From Teacher'
         }
-        return render(request, "admin_template/staff_leave_view.html", context)
+        return render(request, "admin_template/teacher_leave_view.html", context)
     else:
         id = request.POST.get('id')
         status = request.POST.get('status')
@@ -569,7 +569,7 @@ def admin_notify_staff(request):
         'page_title': "Send Notifications To Teacher",
         'allStaff': staff
     }
-    return render(request, "admin_template/staff_notification.html", context)
+    return render(request, "admin_template/teacher_notification.html", context)
 
 
 def admin_notify_student(request):

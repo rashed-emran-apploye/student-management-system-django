@@ -6,6 +6,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import (HttpResponseRedirect, get_object_or_404,redirect, render)
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 
 from .forms import *
 from .models import *
@@ -26,7 +27,7 @@ def staff_home(request):
         subject_list.append(subject.name)
         attendance_list.append(attendance_count)
     context = {
-        'page_title': 'Staff Panel - ' + str(staff.admin.last_name) + ' (' + str(staff.course) + ')',
+        'page_title': 'Teacher Panel - '+str(staff.admin.first_name) + str(staff.admin.last_name) + ' (' + str(staff.course) + ')',
         'total_students': total_students,
         'total_attendance': total_attendance,
         'total_leave': total_leave,
@@ -47,7 +48,7 @@ def staff_take_attendance(request):
         'page_title': 'Take Attendance'
     }
 
-    return render(request, 'teacher_template/staff_take_attendance.html', context)
+    return render(request, 'teacher_template/teacher_take_attendance.html', context)
 
 
 @csrf_exempt
@@ -104,7 +105,7 @@ def staff_update_attendance(request):
         'page_title': 'Update Attendance'
     }
 
-    return render(request, 'teacher_template/staff_update_attendance.html', context)
+    return render(request, 'teacher_template/teacher_update_attendance.html', context)
 
 
 @csrf_exempt
@@ -165,7 +166,7 @@ def staff_apply_leave(request):
                 messages.error(request, "Could not apply!")
         else:
             messages.error(request, "Form has errors!")
-    return render(request, "teacher_template/staff_apply_leave.html", context)
+    return render(request, "teacher_template/teacher_apply_leave.html", context)
 
 
 def staff_feedback(request):
@@ -188,7 +189,7 @@ def staff_feedback(request):
                 messages.error(request, "Could not Submit!")
         else:
             messages.error(request, "Form has errors!")
-    return render(request, "teacher_template/staff_feedback.html", context)
+    return render(request, "teacher_template/teacher_feedback.html", context)
 
 
 def staff_view_profile(request):
@@ -222,13 +223,13 @@ def staff_view_profile(request):
                 return redirect(reverse('staff_view_profile'))
             else:
                 messages.error(request, "Invalid Data Provided")
-                return render(request, "teacher_template/staff_view_profile.html", context)
+                return render(request, "teacher_template/teacher_view_profile.html", context)
         except Exception as e:
             messages.error(
                 request, "Error Occured While Updating Profile " + str(e))
-            return render(request, "teacher_template/staff_view_profile.html", context)
+            return render(request, "teacher_template/teacher_view_profile.html", context)
 
-    return render(request, "teacher_template/staff_view_profile.html", context)
+    return render(request, "teacher_template/teacher_view_profile.html", context)
 
 
 @csrf_exempt
@@ -250,7 +251,7 @@ def staff_view_notification(request):
         'notifications': notifications,
         'page_title': "View Notifications"
     }
-    return render(request, "teacher_template/staff_view_notification.html", context)
+    return render(request, "teacher_template/teacher_view_notification.html", context)
 
 
 def staff_add_result(request):
@@ -283,7 +284,7 @@ def staff_add_result(request):
                 messages.success(request, "Scores Saved")
         except Exception as e:
             messages.warning(request, "Error Occured While Processing Form")
-    return render(request, "teacher_template/staff_add_result.html", context)
+    return render(request, "teacher_template/teacher_add_result.html", context)
 
 
 @csrf_exempt

@@ -22,7 +22,6 @@ from . import admin_views, teacher_views, student_views, views
 urlpatterns = [
     path("", views.login_page, name='login_page'),
     path("get_attendance", views.get_attendance, name='get_attendance'),
-    path("firebase-messaging-sw.js", views.showFirebaseJS, name='showFirebaseJS'),
     path("doLogin/", views.doLogin, name='user_login'),
     path("logout_user/", views.logout_user, name='user_logout'),
     path("home/admin/", admin_views.admin_home, name='admin_home'),
