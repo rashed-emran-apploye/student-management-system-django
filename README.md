@@ -1,15 +1,20 @@
 # Student Management System Created Using Django
-This is a Simple Student Management System Developed While Learning Django.
-Feel free to make changes based on your requirements.
+This is a Final Year Project:
+##Project Name:Student Management System in Django
+##Project Supervisor: Huo Mao
+##Project done by: 
+###Name: Erman Hossain Rashed
+###Student Id: 2017521460044
+###Batch 2017, Software Engineering
+###Sichuan University,Chengdu,Sichuan,China
 
-[Front-end Template](http://adminlte.io "Admin LTE.io")
 
 
 
 
-## Features of this Project
+###Module Functionalities
 
-### What can User's Do ?
+### 
 
 ### A. Admin
 
@@ -54,51 +59,51 @@ Feel free to make changes based on your requirements.
 
 
 ### Installation
-**1. Create a Folder where you want to save the project**
+**1. Create a Folder to save the project**
 
 **2. Create a Virtual Environment and Activate**
 
 Install Virtual Environment First
 ```
-$  pip install virtualenv
+pip install virtualenv
 ```
 
 Create Virtual Environment
 
 For Windows
 ```
-$  python -m venv venv
+python -m venv env
 ```
 For Mac
 ```
-$  python3 -m venv venv
+python3 -m venv env
 ```
 For Linux
 ```
-$  virtualenv .
+virtualenv .
 ```
 
 Activate Virtual Environment
 
 For Windows
 ```
-$  source venv/scripts/activate
+source env/scripts/activate
 ```
 
 For Mac
 ```
-$  source venv/bin/activate
+source env/bin/activate
 ```
 
 For Linux
 ```
-$  source bin/activate
+source bin/activate
 ```
 
 
 **3. Install Requirements from 'requirements.txt'**
 ```python
-$  pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 **5. Add the hosts**
@@ -113,37 +118,37 @@ ALLOWED_HOSTS = []
 
 **6. Now Run Server**
 
-Command for PC:
+Command for Windows:
 ```python
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 Command for Mac:
 ```python
-$ python3 manage.py runserver
+python manage.py runserver
 ```
 
 Command for Linux:
 ```python
-$ python3 manage.py runserver
+python manage.py runserver
 ```
 
 **7. Login Credentials**
 
 Create Super User (HOD)
-Command for PC:
+Command for Windows:
 ```
-$  python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 Command for Mac:
 ```
-$  python3 manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 Command for Linux:
 ```
-$  python3 manage.py createsuperuser
+python manage.py createsuperuser
 ```
 
 
@@ -153,18 +158,15 @@ $  python3 manage.py createsuperuser
 
 ## Project's Utility
 
-- [x] Admin/teacher/Student Login
-- [x] Add and Edit Course
-- [x] Add and Edit teacher
-- [x] Add and Edit Student
-- [x] Add and Edit Subject
-- [x] Upload teacher's Picture
-- [x] Upload Student's Picture
+- [x] Admin/Teacher/Student Login
+- [x] CURD (Create, Update, Read, Delete) operations in Course
+- [x] CURD (Create, Update, Read, Delete) operations in teacher
+- [x] CURD (Create, Update, Read, Delete) operations in Student
+- [x] CURD (Create, Update, Read, Delete) operations in Subject
+- [x] Upload admin, student, teacher's Picture
 - [x] Sidebar Active Status
-- [x] Model Forms for all
-- [x] Attendance and Update Attendance
 - [x] Password Reset Via Email
-- [x] Apply For Leave
+- [x] Apply For Leave both for Teachers and Students
 - [x] Students Can Check Attendance
 - [x] Check Email Availability
 - [x] Reply to Leave Applications
@@ -174,11 +176,10 @@ $  python3 manage.py createsuperuser
 - [x] teacher Profile Edit
 - [x] Student Profile Edit
 - [x] Student Dashboard
-- [x] Passing Page Title From View
-- [x] teacher Dashboard
+- [x] Teacher Dashboard
 - [x] Admin Dashboard
-- [x] teacher Add Student's Result
-- [x] teacher Edit Result 
+- [x] Teacher Add Student's Result
+- [x] Teacher Edit Result 
 - [x] Google CAPTCHA
 - [x] Student View Result
 
