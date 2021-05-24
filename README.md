@@ -30,7 +30,7 @@
 8. Review and Reply Student/teacher Feedback
 9. Review (Approve/Reject) Student/teacher Leave
 
-### B. teacher/Teachers
+### B. Teachers
 
 1. See the Overall Summary Charts related to their students, their subjects, leave status, etc.
 2. Take/Update Students Attendance
