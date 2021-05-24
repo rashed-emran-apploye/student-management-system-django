@@ -633,3 +633,44 @@ def send_staff_notification(request):
         return HttpResponse("True")
     except Exception as e:
         return HttpResponse("False")
+def delete_staff(request, staff_id):
+    staff = get_object_or_404(CustomUser, staff__id=staff_id)
+    staff.delete()
+    messages.success(request, "Staff deleted successfully!")
+    return redirect(reverse('manage_staff'))
+
+
+def delete_student(request, student_id):
+    student = get_object_or_404(CustomUser, student__id=student_id)
+    student.delete()
+    messages.success(request, "Student deleted successfully!")
+    return redirect(reverse('manage_student'))
+
+
+def delete_course(request, course_id):
+    course = get_object_or_404(Course, id=course_id)
+    try:
+        course.delete()
+        messages.success(request, "Course deleted successfully!")
+    except Exception:
+        messages.error(
+            request, "Sorry, some students are assigned to this course already. Kindly change the affected student course and try again")
+    return redirect(reverse('manage_course'))
+
+
+def delete_subject(request, subject_id):
+    subject = get_object_or_404(Subject, id=subject_id)
+    subject.delete()
+    messages.success(request, "Subject deleted successfully!")
+    return redirect(reverse('manage_subject'))
+
+
+def delete_session(request, session_id):
+    session = get_object_or_404(Session, id=session_id)
+    try:
+        session.delete()
+        messages.success(request, "Session deleted successfully!")
+    except Exception:
+        messages.error(
+            request, "There are students assigned to this session. Please move them to another session.")
+    return redirect(reverse('manage_session'))

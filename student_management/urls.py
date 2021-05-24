@@ -52,6 +52,11 @@ urlpatterns = [
     path("edit/student/<int:student_id>", admin_views.edit_student, name='edit_student'),
     path("edit/course/<int:course_id>", admin_views.edit_course, name='edit_course'),
     path("edit/subject/<int:subject_id>", admin_views.edit_subject, name='edit_subject'),
+    path("staff/delete/<int:staff_id>", admin_views.delete_staff, name='delete_staff'),
+    path("course/delete/<int:course_id>", admin_views.delete_course, name='delete_course'),
+    path("subject/delete/<int:subject_id>", admin_views.delete_subject, name='delete_subject'),
+    path("session/delete/<int:session_id>", admin_views.delete_session, name='delete_session'),
+    path("student/delete/<int:student_id>", admin_views.delete_student, name='delete_student'),
     
     
     # Staff
