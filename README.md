@@ -1,15 +1,13 @@
 # Student Management System Created Using Django
-This is a Final Year Project:
+## This is a Final Year Project:
 
-Project Name:Student Management System in Django
-
-Project Supervisor: Huo Mao
-
-Project done by:
-Name: Erman Hossain Rashed
-Student Id: 2017521460044
-Batch 2017, Software Engineering
-Sichuan University,Chengdu,Sichuan,China
+## Project Name:Student Management System in Django
+## Project Supervisor: Huo Mao
+## Project done by:
+### Name: Erman Hossain Rashed
+### Student Id: 2017521460044
+### Batch 2017, Software Engineering
+### Sichuan University,Chengdu,Sichuan,China
 
 
 
@@ -53,7 +51,7 @@ Sichuan University,Chengdu,Sichuan,China
 
 ## How to Install and Run this project?
 
-### Pre-Requisites:
+### Before Run this Project:
 
 1. Install Python Latest Version
 
@@ -62,7 +60,7 @@ Sichuan University,Chengdu,Sichuan,China
 
 
 
-### Installation
+### Project Installation
 **1. Create a Folder to save the project**
 
 **2. Create a Virtual Environment and Activate**
