@@ -1,27 +1,24 @@
 # Student Management System Created Using Django
-###This is a Final Year Project:
+This is a Final Year Project:
 
-##Project Name:Student Management System in Django
+Project Name:Student Management System in Django
 
-##Project Supervisor: Huo Mao
+Project Supervisor: Huo Mao
 
-##Project done by: 
-###Name: Erman Hossain Rashed
-
-
-###Student Id: 2017521460044
-
-###Batch 2017, Software Engineering
-
-###Sichuan University,Chengdu,Sichuan,China
+Project done by:
+Name: Erman Hossain Rashed
+Student Id: 2017521460044
+Batch 2017, Software Engineering
+Sichuan University,Chengdu,Sichuan,China
 
 
 
 
 
-###Module Functionalities
 
-### 
+#Module Functionalities
+
+
 
 ### A. Admin
 
