@@ -1,7 +1,0 @@
-.vscode
-.idea
-*.pyc
-media/
-student_management_system/migrations/*
-!student_management_system/migrations/0001_initial.py
-
