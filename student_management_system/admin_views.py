@@ -54,9 +54,12 @@ def add_staff(request):
             password = form.cleaned_data.get('password')
             course = form.cleaned_data.get('course')
             passport = request.FILES.get('profile_pic')
-            fs = FileSystemStorage()
-            filename = fs.save(passport.name, passport)
-            passport_url = fs.url(filename)
+            try:
+                fs = FileSystemStorage()
+                filename = fs.save(passport.name, passport)
+                passport_url = fs.url(filename)
+            except:
+                passport_url = passport
             try:
                 user = CustomUser.objects.create_user(
                     email=email, password=password, user_type=2, first_name=first_name, last_name=last_name, profile_pic=passport_url)

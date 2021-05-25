@@ -14,7 +14,7 @@ class FormSettings(forms.ModelForm):
 
 class CustomUserForm(FormSettings):
     email = forms.EmailField(required=True)
-    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Others')],initial='O')
+    gender = forms.ChoiceField(choices=[('M', 'Male'), ('F', 'Female'), ('O', 'Others')], initial='O')
     first_name = forms.CharField(required=False)
     last_name = forms.CharField(required=False)
     address = forms.CharField(widget=forms.Textarea,initial="My Address")
@@ -22,7 +22,7 @@ class CustomUserForm(FormSettings):
     widget = {
         'password': forms.PasswordInput(),
     }
-    profile_pic = forms.ImageField()
+    profile_pic = forms.ImageField(required=False)
 
     def __init__(self, *args, **kwargs):
         super(CustomUserForm, self).__init__(*args, **kwargs)
