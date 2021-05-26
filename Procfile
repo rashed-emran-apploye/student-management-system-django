@@ -1,1 +1,1 @@
-web: gunicorn student_management_system.wsgi
+cleweb: gunicorn student_management_system.wsgi
